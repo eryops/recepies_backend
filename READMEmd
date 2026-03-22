@@ -1,0 +1,25 @@
+# 📘 FastAPI + PostgreSQL (Docker) — Development environment
+
+This project uses:
+
+- **FastAPI** (backend)
+- **SQLAlchemy** (ORM)
+- **PostgreSQL in Docker** (database)
+
+This guide shows how to get everything running locally.
+
+---
+
+## 🚀 1. Start PostgreSQL (Docker)
+
+Ensure Docker Desktop is running.
+
+Start the database:
+
+```bash
+docker run --name recipes-db \
+    -e POSTGRES_PASSWORD=dev \
+    -e POSTGRES_USER=dev \
+    -e POSTGRES_DB=recipes \
+    -p 5432:5432 \
+    -d postgres
