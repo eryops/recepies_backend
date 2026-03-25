@@ -9,6 +9,7 @@ class Recipe(BaseModel):
     id: UUID
     name: str
     name_en: Optional[str] = None
+    images: Optional[list[dict[str, Any]]] = None
     description: Optional[str] = None
     description_en: Optional[str] = None
     ingredients: list[dict[str, Any]]
@@ -23,6 +24,7 @@ class Recipe(BaseModel):
 class RecipeCreate(BaseModel):
     name: str
     name_en: Optional[str] = None
+    images: Optional[list[dict[str, Any]]] = None
     description: Optional[str] = None
     description_en: Optional[str] = None
     ingredients: list[dict[str, Any]]
@@ -35,6 +37,7 @@ class RecipeCreate(BaseModel):
 class RecipeUpdate(BaseModel):
     name: Optional[str] = None
     name_en: Optional[str] = None
+    images: Optional[list[dict[str, Any]]] = None
     description: Optional[str] = None
     description_en: Optional[str] = None
     ingredients: Optional[list[dict[str, Any]]] = None
