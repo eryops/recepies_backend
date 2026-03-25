@@ -1,14 +1,18 @@
 from pydantic import BaseModel
-from typing import Optional
+from typing import Optional, Any
 from uuid import UUID
 from datetime import datetime
 
 class Recipe(BaseModel):
+    model_config = {"from_attributes": True}
     id: UUID
     name: str
+    name_en: Optional[str] = None
     description: Optional[str] = None
-    ingredients: list[str]
+    description_en: Optional[str] = None
+    ingredients: list[dict[str, Any]]
     instructions: list[str]
+    instructions_en: Optional[list[str]] = None
     youtube_url: Optional[str] = None
     prep_time_minutes: Optional[int] = None
     cook_time_minutes: Optional[int] = None
@@ -17,18 +21,24 @@ class Recipe(BaseModel):
 
 class RecipeCreate(BaseModel):
     name: str
-    description: str | None = None
-    ingredients: list[str]
-    instructions: list[str] | None = None
-    youtube_url: str | None = None
-    prep_time_minutes: int | None = None
-    cook_time_minutes: int | None = None
+    name_en: Optional[str] = None
+    description: Optional[str] = None
+    description_en: Optional[str] = None
+    ingredients: list[dict[str, Any]]
+    instructions: list[str]
+    instructions_en: Optional[list[str]] = None
+    youtube_url: Optional[str] = None
+    prep_time_minutes: Optional[int] = None
+    cook_time_minutes: Optional[int] = None
 
 class RecipeUpdate(BaseModel):
-    name: str | None = None
-    description: str | None = None
-    ingredients: list[str] | None = None
-    instructions: list[str] | None = None
-    youtube_url: str | None = None
-    prep_time_minutes: int | None = None
-    cook_time_minutes: int | None = None
+    name: str
+    name_en: Optional[str] = None
+    description: Optional[str] = None
+    description_en: Optional[str] = None
+    ingredients: list[dict[str, Any]]
+    instructions: list[str]
+    instructions_en: Optional[list[str]] = None
+    youtube_url: Optional[str] = None
+    prep_time_minutes: Optional[int] = None
+    cook_time_minutes: Optional[int] = None
