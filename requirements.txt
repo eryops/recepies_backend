@@ -1,0 +1,16 @@
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+
+# SQLAlchemy async
+sqlalchemy==2.0.29
+asyncpg==0.29.0
+
+# Alembic (synkron driver, fungerar på Windows)
+alembic==1.13.1
+psycopg[binary]==3.1.18
+
+# Pydantic v2
+pydantic==2.6.4
+pydantic-settings==2.2.1
+
+typing-extensions==4.12.2
