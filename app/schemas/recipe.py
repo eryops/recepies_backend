@@ -5,6 +5,7 @@ from datetime import datetime
 
 class Recipe(BaseModel):
     model_config = {"from_attributes": True}
+
     id: UUID
     name: str
     name_en: Optional[str] = None
@@ -32,12 +33,12 @@ class RecipeCreate(BaseModel):
     cook_time_minutes: Optional[int] = None
 
 class RecipeUpdate(BaseModel):
-    name: str
+    name: Optional[str] = None
     name_en: Optional[str] = None
     description: Optional[str] = None
     description_en: Optional[str] = None
-    ingredients: list[dict[str, Any]]
-    instructions: list[str]
+    ingredients: Optional[list[dict[str, Any]]] = None
+    instructions: Optional[list[str]] = None
     instructions_en: Optional[list[str]] = None
     youtube_url: Optional[str] = None
     prep_time_minutes: Optional[int] = None
