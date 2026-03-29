@@ -7,30 +7,6 @@ from app.schemas.recipe import Recipe, RecipeCreate, RecipeUpdate
 router = APIRouter(prefix="/api/recipes", tags=["recipes"])
 
 
-recipes: list[Recipe] = [
-    Recipe(
-        id="1",
-        name="Spaghetti Carbonara",
-        ingredients=["spaghetti", "eggs", "pancetta", "parmesan cheese"],
-        created_at="2024-06-01T12:00:00Z",
-        updated_at="2024-06-01T12:00:00Z",
-    ),
-    Recipe(
-        id="2",
-        name="Chicken Curry",
-        ingredients=["chicken", "curry powder", "coconut milk", "onions"],
-        created_at="2024-06-01T12:00:00Z",
-        updated_at="2024-06-01T12:00:00Z",
-    ),
-    Recipe(
-        id="3",
-        name="Vegetable Stir Fry",
-        ingredients=["broccoli", "carrots", "bell peppers", "soy sauce"],
-        created_at="2024-06-01T12:00:00Z",
-        updated_at="2024-06-01T12:00:00Z",
-    ),
-]
-
 @router.get("")
 def get_recipes():
     return recipes
