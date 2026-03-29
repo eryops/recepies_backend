@@ -1,0 +1,51 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# --- Virtual environments ---
+venv/
+.env/
+.venv/
+
+# --- Environment variables ---
+*.env
+.env.*
+
+# --- Alembic ---
+alembic/versions/__pycache__/
+# (Versionsfiler ska checkas in, men inte cache)
+
+# --- SQLite (if used) ---
+*.db
+*.sqlite3
+
+# --- VS Code ---
+.vscode/
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- MyPy / Pyright / Type checking ---
+.mypy_cache/
+.pyright/
+.dmypy.json
+dmypy.json
+
+# --- Pytest ---
+.pytest_cache/
+
+# --- Coverage ---
+htmlcov/
+.coverage
+.coverage.*
+
+# --- Build artifacts ---
+build/
+dist/
