@@ -38,11 +38,18 @@ def run_migrations_offline():
 
 def run_migrations_online():
     """Run migrations in 'online' mode (sync engine for Alembic)."""
+    # Retrieve the Alembic configuration section from alembic.ini.
+    # Pyright warns that this may return None, so we assert to guarantee type safety.
+
+    section = config.get_section(config.config_ini_section)
+    assert section is not None # Safe: Alembic always provides this when running migrations.
+
     connectable = engine_from_config(
-        config.get_section(config.config_ini_section),
+        section,
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
     )
+
 
     with connectable.connect() as connection:
         context.configure(
