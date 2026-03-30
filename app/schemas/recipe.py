@@ -12,6 +12,7 @@ class Recipe(BaseModel):
     images: Optional[list[dict[str, Any]]] = None
     description: Optional[str] = None
     description_en: Optional[str] = None
+    servings: Optional[int] = None
     ingredients: list[dict[str, Any]]
     instructions: list[str]
     instructions_en: Optional[list[str]] = None
@@ -27,6 +28,7 @@ class RecipeCreate(BaseModel):
     images: Optional[list[dict[str, Any]]] = None
     description: Optional[str] = None
     description_en: Optional[str] = None
+    servings: Optional[int] = None
     ingredients: list[dict[str, Any]]
     instructions: list[str]
     instructions_en: Optional[list[str]] = None
@@ -40,6 +42,7 @@ class RecipeUpdate(BaseModel):
     images: Optional[list[dict[str, Any]]] = None
     description: Optional[str] = None
     description_en: Optional[str] = None
+    servings: Optional[int] = None
     ingredients: Optional[list[dict[str, Any]]] = None
     instructions: Optional[list[str]] = None
     instructions_en: Optional[list[str]] = None

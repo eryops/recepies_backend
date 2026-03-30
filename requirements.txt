@@ -7,10 +7,8 @@ asyncpg==0.29.0
 
 # Alembic (synkron driver, fungerar på Windows)
 alembic==1.13.1
-psycopg2-binary
 
-# Pydantic v2
-pydantic==2.6.4
-pydantic-settings==2.2.1
+# Pydantic v3
+psycopg[binary]
 
 typing-extensions==4.12.2

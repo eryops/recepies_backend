@@ -26,6 +26,8 @@ class RecipeModel(Base):
     description: Mapped[str | None] = mapped_column(Text, nullable=True)
     description_en: Mapped[str | None] = mapped_column(Text, nullable=True)
 
+    servings: Mapped[Integer | None] = mapped_column(Integer, nullable=True)
+
     ingredients: Mapped[list] = mapped_column(JSONB, nullable=False)
 
     instructions: Mapped[list[str]] = mapped_column(JSONB, nullable=False)
